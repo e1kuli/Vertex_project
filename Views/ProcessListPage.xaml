@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Vertexes.ViewModels"
+             x:Class="Vertexes.Views.ProcessListPage"
+             Title="Все процессы"
+             NavigatedTo="ContentPage_NavigatedTo">
+
+
+    <ContentPage.BindingContext>
+        <viewModels:VertexListViewModel/>
+    </ContentPage.BindingContext>
+
+    <!-- Add an item to the toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Добавить процесс" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+    <StackLayout VerticalOptions="FillAndExpand">
+            <HorizontalStackLayout>
+                <Label Text="{Binding NewParentName}" FontSize="Large"/>
+                <Button Text="Изменить"
+                        Command="{Binding BtnChangeClick}" />
+            </HorizontalStackLayout>
+
+            <SearchBar Placeholder="Поиск..." x:Name="searchBox"
+                   SearchCommand="{Binding ProcessSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference searchBox}}"/>
+
+        <!-- Display notes in a list -->
+        <CollectionView x:Name="processCollection" x:FieldModifier="internal"
+                    ItemsSource="{Binding SearchProceses}"
+                    Margin="20"
+                    SelectionMode="Single"
+                    SelectionChangedCommand="{Binding SelectProcessCommand}"
+                    SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
+            <!-- Designate how the collection of items are laid out -->
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <!-- Define the appearance of each item in the list -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Name}" FontSize="22"/>
+                        <Label Text="{Binding Date}" FontSize="14" TextColor="Silver"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

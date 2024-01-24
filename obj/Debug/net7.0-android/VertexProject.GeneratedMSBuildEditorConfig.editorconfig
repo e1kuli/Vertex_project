@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net7.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = Notes
+build_property.ProjectDir = C:\Users\e1_Kuli\source\repos\Diplom\MVVM MS - БД + классы - 23.05 searchBar\MVVM MS - 1\
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Views/AboutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Views.AboutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AboutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AboutPage.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Views/EdgeListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Views.EdgeListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EdgeListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EdgeListPage.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Views/EdgePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Views.EdgePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EdgePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EdgePage.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Views/ProcessListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Views.ProcessListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProcessListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProcessListPage.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Views/SchedulerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Views.SchedulerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SchedulerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SchedulerPage.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Views/VertexListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Views.VertexListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VertexListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VertexListPage.xaml
+
+[C:/Users/e1_Kuli/source/repos/Diplom/MVVM MS - БД + классы - 23.05 searchBar/MVVM MS - 1/Views/VertexPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Notes.Views.VertexPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VertexPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VertexPage.xaml

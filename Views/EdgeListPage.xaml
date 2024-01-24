@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Vertexes.ViewModels"
+             x:Class="Vertexes.Views.EdgeListPage"
+             Title="Все связи"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <ContentPage.BindingContext>
+        <viewModels:EdgeListViewModel />
+    </ContentPage.BindingContext>
+    
+    <!-- Add an item to the toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Добавить связь" Command="{Binding NewCommand}" IconImageSource="{FontImage Glyph='+', Color=White, Size=22}" />
+    </ContentPage.ToolbarItems>
+
+    <!-- Display notes in a list -->
+    <ScrollView>
+    <CollectionView x:Name="edgeCollection" x:FieldModifier="internal"
+                    ItemsSource="{Binding AllEdges}"
+                    Margin="20"
+                    SelectionMode="Single"
+                    SelectionChangedCommand="{Binding SelectEdgeCommand}"
+                    SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
+        <!-- Designate how the collection of items are laid out -->
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+        </CollectionView.ItemsLayout>
+
+        <!-- Define the appearance of each item in the list -->
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                    <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Отношение родителя к наследнику"/>
+                    <Label Text="{Binding NameParent}" FontSize="22"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Отношение наследника к родителю"/>
+                    <Label Text="{Binding NameChild}" FontSize="22"/>
+                </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    </ScrollView>
+</ContentPage>

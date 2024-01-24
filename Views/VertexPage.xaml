@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Vertexes.ViewModels"
+             x:Class="Vertexes.Views.VertexPage"
+             Title="Объект">
+    <ContentPage.BindingContext>
+        <viewModels:VertexViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+    <VerticalStackLayout Spacing="10" Margin="5" VerticalOptions="FillAndExpand">
+        <Border Stroke="Gray">
+            <Grid ColumnDefinitions="*,7*" RowDefinitions="*,*" ColumnSpacing="4">
+                <Label Grid.Column="0" Grid.Row="0" Text="Имя"/>
+                <Entry Grid.Column="1" Grid.Row="0"
+                    x:Name="NameEditor"
+                    Text="{Binding Name}"/>
+                <Label Grid.Column="0" Grid.Row="1" Text="Описание" />
+                <Editor Grid.Column="1" Grid.Row="1" Text="{Binding Text}" AutoSize="TextChanges"/>
+            </Grid>
+        </Border>
+        <HorizontalStackLayout RadioButtonGroup.GroupName="Type" RadioButtonGroup.SelectedValue="{Binding Type}">
+            <Label Text="Тип"/>
+            <RadioButton Content="Объект" Value="0" IsChecked="True"/>
+            <RadioButton Content="Процесс" Value="1"/>
+
+        </HorizontalStackLayout>
+        <Grid ColumnDefinitions="*,*,*,*">
+            <Label Text="{Binding Name}"/>
+                <Picker x:Name="edgePicker" Title="как соединяем" ItemsSource="{Binding EdgesForPicker}" Grid.Column="1" />
+                <Picker x:Name="vertexPicker" Title="с кем соединяем" ItemsSource="{Binding VertexesForPicker}" Grid.Column="2"/>
+            <Button x:Name="lnkBtn" Text="Связать" Grid.Column="3" Command="{Binding LinkCommand}" >
+                <Button.CommandParameter>
+                    <MultiBinding StringFormat="{}{1}{/n}{0}">
+                        <Binding Source="{x:Reference Name=vertexPicker}" Path="SelectedItem"/>
+                        <Binding Source="{x:Reference Name=edgePicker}" Path="SelectedItem"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+        </Grid>
+        <CollectionView ItemsSource="{Binding GroupLinks}" IsGrouped="True" x:Name="vertexCollection" 
+                        SelectionMode="Single"
+                        SelectionChangedCommand="{Binding GoToVertexCommand}"
+                        SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}"
+                        VerticalScrollBarVisibility="Default">
+                <CollectionView.Header>
+                    <Label Text="Header"/>
+                </CollectionView.Header>
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Name}" FontSize="22"/>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="10*,*">
+                        <Label Text="{Binding Name}"/>
+                            <Button Text="Удалить" Grid.Column="1" HeightRequest="50"
+                                    />
+                           <!-- Command="{Binding DeleteLinkCommand, Source={Reference vertexCollection}}"
+                                    CommandParameter="{Binding .}" -->
+                        </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="4">
+            <Button Text="Save"
+                    Command="{Binding SaveCommand}"/>
+
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Command="{Binding DeleteCommand}"/>
+        </Grid>
+            <HorizontalStackLayout x:Name="EventField" IsVisible="{Binding Type}">
+                <VerticalStackLayout>
+                    <Label Text="Дата старта"/>
+                    <DatePicker x:Name="StartDate"></DatePicker>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <Label Text="Дата окончания"/>
+                    <DatePicker x:Name="EndDate"></DatePicker>
+                </VerticalStackLayout>
+                <Button Text="Создать событие" Command="{Binding SaveEventCommand}">
+                    <Button.CommandParameter>
+                        <MultiBinding StringFormat="{}{1}{/n}{0}">
+                            <Binding Source="{x:Reference Name=StartDate}" Path="Date"/>
+                            <Binding Source="{x:Reference Name=EndDate}" Path="Date"/>
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+
+                <Button Text="Удалить событие"/>
+            </HorizontalStackLayout>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
